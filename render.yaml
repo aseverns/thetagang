@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: backend-api
+    env: node
+    root: backend
+    buildCommand: npm install
+    startCommand: npm start
+
+  - type: static
+    name: frontend-ui
+    env: static
+    root: frontend
+    buildCommand: npm install && npm run build
+    publishPath: frontend/build
